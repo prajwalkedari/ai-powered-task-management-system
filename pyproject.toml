@@ -1,0 +1,16 @@
+# Tool configuration only. Dependencies are pinned in requirements.txt.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt text is kept as natural prose, so long lines are allowed there.
+"app/ai/prompts.py" = ["E501"]
